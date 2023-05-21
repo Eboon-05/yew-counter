@@ -5,6 +5,7 @@ use yew::prelude::*;
 pub struct Count {
     pub name: String,
     pub value: i64,
+    pub tags: Vec<String>,
 }
 
 pub enum CounterAction {
@@ -33,7 +34,8 @@ impl Reducible for Store {
         Store {
             dark_theme,
             counts: self.counts.clone(),
-        }.into()
+        }
+        .into()
     }
 }
 
@@ -45,12 +47,15 @@ pub struct CounterProviderProps {
     pub children: Children,
 }
 
-
 #[function_component(CounterProvider)]
 pub fn counter_provider(props: &CounterProviderProps) -> Html {
     let store = use_reducer(|| Store {
         dark_theme: false,
-        counts: Vec::new(),
+        counts: Vec::from([Count {
+            name: "Test count".to_string(),
+            value: 0,
+            tags: Vec::from(["test".to_string(), "work".to_string()]),
+        }]),
     });
 
     html! {

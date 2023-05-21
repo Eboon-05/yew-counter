@@ -13,3 +13,4 @@ categories = ["gui", "wasm", "web-programming"]
 [dependencies]
 web-sys = "0.3.63"
 yew = { version="0.20", features=["csr"] }
+yew_icons = {version = "0.7", features = ["FontAwesomeSolidTags", "HeroiconsSolidPlus", "HeroiconsSolidMinus"]}
