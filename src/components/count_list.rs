@@ -12,6 +12,24 @@ pub fn count_list() -> Html {
         <section class="px-3 pt-4">
             {
                 counter_ctx.counts.clone().into_iter().map(|c| {
+                    let i = counter_ctx.clone().counts.iter().position(|count| count == &c).unwrap();
+
+                    let increment = {
+                        let counter_ctx = counter_ctx.clone();
+
+                        Callback::from(move |_: MouseEvent| {
+                            counter_ctx.dispatch(CounterAction::Increment(i, 1))
+                        })
+                    };
+
+                    let decrement = {
+                        let counter_ctx = counter_ctx.clone();
+
+                        Callback::from(move |_: MouseEvent| {
+                            counter_ctx.dispatch(CounterAction::Decrement(i, 1))
+                        })
+                    };
+
                     html! {
                         <div class="w-full p-4 rounded-xl bg-white bg-opacity-30 grid grid-cols-2 gap-3 mb-2">
                             <div class="text-lg">
@@ -22,10 +40,10 @@ pub fn count_list() -> Html {
                                     {c.value}
                                 </span>
                             </div>
-                            <button class="bg-white shadow rounded-lg w-full py-2">
+                            <button class="bg-white shadow rounded-lg w-full py-2" onclick={decrement}>
                                 <Icon icon_id={IconId::HeroiconsSolidMinus} class="mx-auto w-5 h-5" />
                             </button>
-                            <button class="bg-white shadow rounded-lg w-full py-2">
+                            <button class="bg-white shadow rounded-lg w-full py-2" onclick={increment}>
                                 <Icon icon_id={IconId::HeroiconsSolidPlus} class="mx-auto w-5 h-5" />
                             </button>
                             <div class="col-span-2 flex items-center text-sm">

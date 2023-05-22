@@ -555,8 +555,8 @@ main {
   height: 1.25rem;
 }
 
-.h-screen {
-  height: 100vh;
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-5 {
@@ -565,6 +565,10 @@ main {
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .grid-cols-2 {

@@ -12,6 +12,8 @@ pub enum CounterAction {
     ToggleTheme,
     ThemeDark,
     ThemeLight,
+    Increment(usize, i64),
+    Decrement(usize, i64),
 }
 
 #[derive(Debug, PartialEq, Eq, Clone)]
@@ -31,9 +33,25 @@ impl Reducible for Store {
             _ => self.dark_theme,
         };
 
+        let mut counts = self.counts.clone();
+
+        match action {
+            CounterAction::Decrement(index, amount) => {
+                if let Some(_) = counts.get(index) {
+                    counts[index].value -= amount;
+                }
+            },
+            CounterAction::Increment(index, amount) => {
+                if let Some(_) = counts.get(index) {
+                    counts[index].value += amount;
+                }
+            },
+            _ => ()
+        }
+
         Store {
             dark_theme,
-            counts: self.counts.clone(),
+            counts,
         }
         .into()
     }

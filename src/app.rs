@@ -8,7 +8,7 @@ use crate::counter_ctx::CounterProvider;
 pub fn app() -> Html {
     html! {
         <CounterProvider>
-            <main class="h-screen">
+            <main class="min-h-screen w-screen">
                 <Navbar />
                 <CountList />
             </main>
