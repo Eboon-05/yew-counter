@@ -49,7 +49,7 @@ pub fn navbar() -> Html {
                 <ul class="max-w-md mx-auto">
                     <li class="flex justify-between items-center w-full">
                         <span>{"Dark mode"}</span>
-                        <input value={counter_ctx.dark_theme.to_string()} type="checkbox" onclick={toggle_dark_mode} />
+                        <input checked={counter_ctx.dark_theme} type="checkbox" onclick={toggle_dark_mode} />
                     </li>
                 </ul>
             </section>
