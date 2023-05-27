@@ -2,7 +2,7 @@ use yew::prelude::*;
 
 use yew_icons::{Icon, IconId};
 
-use crate::counter_ctx::{CounterAction, CounterContext};
+use crate::counter_ctx::{structs::CounterAction, CounterContext};
 
 #[function_component(CountList)]
 pub fn count_list() -> Html {
