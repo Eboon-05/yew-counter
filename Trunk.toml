@@ -2,6 +2,3 @@
 stage = "pre_build"
 command = "pnpm"
 command_arguments = ["tailwindcss", "-i", "index.css", "-o", "app.css"]
-
-[package.metadata.wasm-pack]
-pre-build = "cp -r assets dist/assets"
