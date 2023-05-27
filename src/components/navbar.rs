@@ -6,9 +6,11 @@ use yew_icons::{Icon, IconId};
 
 use crate::counter_ctx::{CounterAction, CounterContext};
 
+use super::switch::Switch;
+
 #[function_component(Navbar)]
 pub fn navbar() -> Html {
-    let active = use_state(|| true);
+    let active = use_state(|| false);
     let counter_ctx = use_context::<CounterContext>().unwrap();
 
     let toggle_active = {
@@ -46,10 +48,10 @@ pub fn navbar() -> Html {
                     active.not().then_some("hidden"),
             )}>
                 <h1 class="text-2xl font-bold">{"Settings"}</h1>
-                <ul class="max-w-md mx-auto">
-                    <li class="flex justify-between items-center w-full">
+                <ul class="max-w-md mt-3 mx-auto">
+                    <li class="flex justify-between items-center w-full" onclick={toggle_dark_mode}>
                         <span>{"Dark mode"}</span>
-                        <input checked={counter_ctx.dark_theme} type="checkbox" onclick={toggle_dark_mode} />
+                        <Switch checked={counter_ctx.dark_theme} />
                     </li>
                 </ul>
             </section>
