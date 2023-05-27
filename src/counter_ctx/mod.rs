@@ -1,5 +1,5 @@
 use std::rc::Rc;
-use web_sys::{window, console};
+use web_sys::{window};
 use yew::prelude::*;
 
 mod utils;

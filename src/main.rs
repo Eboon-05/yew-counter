@@ -1,6 +1,7 @@
 mod app;
 mod components;
 mod counter_ctx;
+mod routes;
 
 use app::App;
 
