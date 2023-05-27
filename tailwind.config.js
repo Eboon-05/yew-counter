@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'pacifico': ['Pacifico', 'cursive', 'sans-serif'],
+      'itim': ['Itim', 'cursive', 'sans-serif'],
+    }
   },
   plugins: [],
   darkMode: 'class',

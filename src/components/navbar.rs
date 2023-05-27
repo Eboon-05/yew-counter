@@ -31,8 +31,9 @@ pub fn navbar() -> Html {
             active.not().then_some("bg-white dark:bg-black dark:text-white shadow-md"),
         )}>
             <div class={classes!(
-                Some("text-5xl font-bold"),
-                active.then_some("")
+                Some("text-5xl font-pacifico"),
+                active.then_some(""),
+                active.not().then_some("gradient-text"),
             )}>
                 {"Counter"}
             </div>

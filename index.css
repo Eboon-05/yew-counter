@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/assets/fonts/Pacifico-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('/assets/fonts/Itim-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
 @layer components {
     .bg-gradient {
         background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    }
+
+    .gradient-text {
+        background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
