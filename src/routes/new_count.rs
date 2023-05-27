@@ -1,12 +1,16 @@
 use yew::prelude::*;
+use yew_router::components::Link;
 
-use crate::components::navbar::Navbar;
+use crate::{components::header::Header, app::Route};
 
 #[function_component(NewCount)]
 pub fn new_count() -> Html {
     html! {
         <main class="min-h-screen w-screen bg-transparent">
-            <Navbar />
+            <Header />
+            <Link<Route> to={Route::Home}>
+                {"<- Go back to Home"}
+            </Link<Route>>
         </main>
     }
 }

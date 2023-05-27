@@ -8,8 +8,8 @@ use crate::counter_ctx::{structs::CounterAction, CounterContext};
 
 use super::switch::Switch;
 
-#[function_component(Navbar)]
-pub fn navbar() -> Html {
+#[function_component(Header)]
+pub fn header() -> Html {
     let active = use_state(|| false);
     let counter_ctx = use_context::<CounterContext>().unwrap();
 

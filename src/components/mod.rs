@@ -1,3 +1,3 @@
 pub mod count_list;
-pub mod navbar;
+pub mod header;
 pub mod switch;
