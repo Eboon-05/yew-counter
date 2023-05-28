@@ -14,6 +14,12 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('/assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
 @layer components {
     .bg-gradient {
         background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);

@@ -43,16 +43,21 @@ pub fn navbar() -> Html {
                     html! {
                         <li 
                             class={classes!(
-                                Some("rounded-full p-3 font-pacifico"),
+                                Some("rounded-full p-3 font-bold"),
                                 matches.then_some("bg-white dark:bg-black dark:text-white"),
                             )}
                         >
-                            <Link<Route> to={p.path} classes={classes!(
-                                Some("flex items-center"),
-                                matches.then_some("dark:gradient-text")
-                            )}>
+                            <Link<Route> 
+                                to={p.path} 
+                                classes={classes!(
+                                    Some("flex items-center"),
+                                    matches.then_some("dark:gradient-text")
+                                )}
+                            >
                                 <Icon icon_id={p.icon} class="w-5 h-5 mr-2" />
-                                {p.name}
+                                if matches {
+                                    {p.name}
+                                }
                             </Link<Route>>
                         </li>
                     }

@@ -11,6 +11,7 @@ pub enum CounterAction {
     ToggleTheme,
     Increment(usize, i64),
     Decrement(usize, i64),
+    AddCount(Count),
 }
 
 #[derive(Debug, PartialEq, Eq, Clone)]

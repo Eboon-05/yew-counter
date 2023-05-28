@@ -34,6 +34,10 @@ impl Reducible for Store {
 
                 save_counts(&counts)
             },
+            CounterAction::AddCount(count) => {
+                counts.push(count);
+                save_counts(&counts)
+            },
             _ => ()
         }
 

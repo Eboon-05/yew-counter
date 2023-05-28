@@ -13,7 +13,7 @@ categories = ["gui", "wasm", "web-programming"]
 [dependencies]
 serde = "1.0.163"
 serde_json = "1.0.96"
-web-sys = { version = "0.3.63", features = ["Window", "Storage", "Element"]}
+web-sys = { version = "0.3.63", features = ["Window", "Storage", "Element", "Event", "SubmitEvent"]}
 yew = { version="0.20", features=["csr"] }
 yew_icons = {version = "0.7", features = [
     "FontAwesomeSolidTags", 

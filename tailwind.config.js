@@ -8,8 +8,10 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
+      'sans': ['"Source Sans Pro"', 'sans-serif'],
       'pacifico': ['Pacifico', 'cursive', 'sans-serif'],
       'itim': ['Itim', 'cursive', 'sans-serif'],
+      'source-sans-pro': ['"Source Sans Pro"', 'sans-serif'],
     }
   },
   plugins: [],
