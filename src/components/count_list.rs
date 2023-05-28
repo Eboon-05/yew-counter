@@ -40,10 +40,10 @@ pub fn count_list() -> Html {
                                     {c.value}
                                 </span>
                             </div>
-                            <button class="bg-white shadow rounded-lg w-full py-2" onclick={decrement}>
+                            <button class="bg-white dark:bg-black dark:text-white shadow rounded-lg w-full py-2" onclick={decrement}>
                                 <Icon icon_id={IconId::HeroiconsSolidMinus} class="mx-auto w-5 h-5" />
                             </button>
-                            <button class="bg-white shadow rounded-lg w-full py-2" onclick={increment}>
+                            <button class="bg-white dark:bg-black dark:text-white shadow rounded-lg w-full py-2" onclick={increment}>
                                 <Icon icon_id={IconId::HeroiconsSolidPlus} class="mx-auto w-5 h-5" />
                             </button>
                             <div class="col-span-2 flex items-center text-sm">
