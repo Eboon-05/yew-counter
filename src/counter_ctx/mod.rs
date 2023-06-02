@@ -41,9 +41,12 @@ impl Reducible for Store {
             _ => ()
         }
 
+        let tags = sync_tags(counts.clone());
+
         Store {
             dark_theme,
             counts,
+            tags,
         }
         .into()
     }
@@ -61,10 +64,12 @@ pub struct CounterProviderProps {
 pub fn counter_provider(props: &CounterProviderProps) -> Html {
     let window = window().unwrap();
     let local_storage = window.local_storage().unwrap().unwrap();
+    let counts = get_counts();
 
     let store = use_reducer(|| Store {
         dark_theme: get_dark_theme(),
-        counts: get_counts(),
+        counts: counts.clone(),
+        tags: sync_tags(counts),
     });
 
     use_effect_with_deps({

@@ -18,4 +18,5 @@ pub enum CounterAction {
 pub struct Store {
     pub dark_theme: bool,
     pub counts: Vec<Count>,
+    pub tags: Vec<String>,
 }

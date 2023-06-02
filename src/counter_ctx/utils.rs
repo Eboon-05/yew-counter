@@ -60,3 +60,17 @@ pub fn get_counts() -> Vec<Count> {
 
     return counts
 }
+
+pub fn sync_tags(counts: Vec<Count>) -> Vec<String> {
+    let mut tags: Vec<String> = vec![];
+
+    for c in counts.iter() {
+        for t in c.tags.iter() {
+            if !tags.contains(t) {
+                tags.push(t.clone())
+            }
+        }
+    }
+
+    tags
+}
