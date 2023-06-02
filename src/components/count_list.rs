@@ -46,14 +46,16 @@ pub fn count_list() -> Html {
                             <button class="bg-white dark:bg-black dark:text-white shadow rounded-lg w-full py-2" onclick={increment}>
                                 <Icon icon_id={IconId::HeroiconsSolidPlus} class="mx-auto w-5 h-5" />
                             </button>
-                            <div class="col-span-2 flex items-center text-sm">
-                                <Icon icon_id={IconId::FontAwesomeSolidTags} class="mr-2 text-white" />
-                                {c.tags.into_iter().map(|t| {
-                                    html! {
-                                        <span class="bg-white bg-opacity-40 p-1 rounded-lg mr-2">{t}</span>
-                                    }
-                                }).collect::<Html>()}
-                            </div>
+                            if c.tags.len() > 0 {
+                                <div class="col-span-2 flex items-center text-sm">
+                                    <Icon icon_id={IconId::FontAwesomeSolidTags} class="mr-2 text-white" />
+                                    {c.tags.into_iter().map(|t| {
+                                        html! {
+                                            <span class="bg-white bg-opacity-40 p-1 rounded-lg mr-2">{t}</span>
+                                        }
+                                    }).collect::<Html>()}
+                                </div>
+                            }
                         </div>
                     }
                 }).collect::<Html>()
