@@ -13,7 +13,7 @@ pub fn new_count() -> Html {
     let name_ref = use_node_ref();
     let initial_value_ref = use_node_ref();
     let tag_ref = use_node_ref();
-    let tags: UseStateHandle<Vec<String>> = use_state(|| vec!["hello".to_string(), "world".to_string()]);
+    let tags: UseStateHandle<Vec<String>> = use_state(|| vec![]);
 
     let onsubmit: Callback<SubmitEvent> = Callback::from({
         let name_ref = name_ref.clone();

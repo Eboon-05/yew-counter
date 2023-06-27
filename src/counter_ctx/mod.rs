@@ -18,6 +18,7 @@ impl Reducible for Store {
         };
 
         let mut counts = self.counts.clone();
+        let mut selected_tags = self.selected_tags.clone();
 
         match action {
             CounterAction::Decrement(index, amount) => {
@@ -38,6 +39,9 @@ impl Reducible for Store {
                 counts.push(count);
                 save_counts(&counts)
             },
+            CounterAction::SelectTags(tags) => {
+                selected_tags = tags;
+            },
             _ => ()
         }
 
@@ -47,6 +51,7 @@ impl Reducible for Store {
             dark_theme,
             counts,
             tags,
+            selected_tags,
         }
         .into()
     }
@@ -70,6 +75,7 @@ pub fn counter_provider(props: &CounterProviderProps) -> Html {
         dark_theme: get_dark_theme(),
         counts: counts.clone(),
         tags: sync_tags(counts),
+        selected_tags: vec![],
     });
 
     use_effect_with_deps({

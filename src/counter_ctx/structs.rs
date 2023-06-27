@@ -12,6 +12,7 @@ pub enum CounterAction {
     Increment(usize, i64),
     Decrement(usize, i64),
     AddCount(Count),
+    SelectTags(Vec<String>),
 }
 
 #[derive(Debug, PartialEq, Eq, Clone)]
@@ -19,4 +20,5 @@ pub struct Store {
     pub dark_theme: bool,
     pub counts: Vec<Count>,
     pub tags: Vec<String>,
+    pub selected_tags: Vec<String>,
 }

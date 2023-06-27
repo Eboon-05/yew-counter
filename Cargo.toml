@@ -21,6 +21,7 @@ yew_icons = {version = "0.7", features = [
     "HeroiconsSolidMinus", 
     "HeroiconsSolidBars3", 
     "HeroiconsOutlineXMark",
-    "HeroiconsSolidHome"
+    "HeroiconsSolidHome",
+    "HeroiconsOutlineChevronDown"
     ]}
 yew-router = "0.17"
